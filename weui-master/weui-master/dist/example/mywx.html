@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>报修</title>
+    <script type="text/javascript" src="jquery/jquery-3.2.1.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>WeUI</title>
     <link rel="stylesheet" href="../style/weui.css"/>
     <link rel="stylesheet" href="./example.css"/>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#submit").click(function () {
+                var s = ""
+                s = $("#form-mobile").attr("val")
+                alert(s)
+
+                s = $("#form-mobile").attr("input")
+                alert(s)
+                s = $("#form-mobile").attr("id")
+                alert(s)
+                s = $("#form-mobile").attr("type")
+                alert(s)
+                s = $("#form-mobile").attr("content")
+                alert(s)
+
+
+            });
+        });
+
+    </script>
+
 </head>
 <body>
 <div class="weui-cells__title">个人信息</div>
@@ -13,19 +43,19 @@
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入您的姓名" readonly="readonly"/>
+            <input id="form-name" class="weui-input" type="text" placeholder="请输入姓名" readonly="readonly"/>
         </div>
     </div>
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入您的学号" readonly="readonly"/>
+            <input id="form-stuid" class="weui-input" type="text" placeholder="请输入学号" readonly="readonly"/>
         </div>
     </div>
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">性别</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入您的性别" readonly="readonly"/>
+            <input id="form-gender" class="weui-input" type="text" placeholder="请输入性别" readonly="readonly"/>
         </div>
     </div>
 </div>
@@ -34,39 +64,38 @@
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">手机</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入手机号"/>
+            <input id="form-mobile" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入手机号"/>
         </div>
     </div>
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">qq</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入qq号"/>
+            <input id="form-qq" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入qq号"/>
         </div>
     </div>
 
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">微信</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入qq号"/>
+            <input id="form-wechat" class="weui-input" type="text" pattern="[0-9]*" placeholder="请输入微信号"/>
         </div>
     </div>
 </div>
 
+
 <div class="weui-cells__title">报修详情</div>
 <div class="weui-cells weui-cells_form">
-
     <div class="weui-cell weui-cell_select weui-cell_select-after">
         <div class="weui-cell__hd">
             <label for="" class="weui-label">校区</label>
         </div>
         <div class="weui-cell__bd">
-            <select class="weui-select" name="select2">
-                <option value="1">中国</option>
-                <option value="2">美国</option>
-                <option value="3">英国</option>
+            <select id="form-campus" class="weui-select" name="select2">
+                <option value="1">兴庆校区</option>
+                <option value="2">雁塔校区</option>
+                <option value="3">二附院</option>
             </select>
         </div>
-
     </div>
 
     <div class="weui-cell weui-cell_select weui-cell_select-after">
@@ -74,31 +103,26 @@
             <label for="" class="weui-label">宿舍楼</label>
         </div>
         <div class="weui-cell__bd">
-            <select class="weui-select" name="select2">
-                <option value="1">中国</option>
-                <option value="2">美国</option>
-                <option value="3">英国</option>
+            <select id="form-building" class="weui-select" name="select2">
+                <option value="1">东1</option>
+                <option value="2">东2</option>
+                <option value="3">东3</option>
             </select>
 
         </div>
     </div>
 
-    <div class="weui-cell weui-cell_select weui-cell_select-after">
-        <div class="weui-cell__hd">
-            <label for="" class="weui-label">房间号</label>
-        </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">房间号</label></div>
         <div class="weui-cell__bd">
-            <select class="weui-select" name="select2">
-                <option value="1">中国</option>
-                <option value="2">美国</option>
-                <option value="3">英国</option>
-            </select>
-
+            <input id="form-room" class="weui-input" type="text" pattern="[0-9]*" placeholder="请输入房间号"/>
         </div>
     </div>
+</div>
 
-    <div class="weui-cells__title">优先处理方式</div>
 
+<div class="weui-cells__title">优先处理方式</div>
+<div class="weui-cells weui-cells_form">
     <div class="weui-cell weui-cell_select weui-cell_select-after">
         <div class="weui-cell__bd">
             <select class="weui-select" name="select2">
@@ -108,20 +132,22 @@
             </select>
         </div>
     </div>
+</div>
 
-
-    <div class="weui-cells__title">故障描述</div>
-
+<div class="weui-cells__title">故障描述</div>
+<div class="weui-cells weui-cells_form">
     <div class="weui-cell">
         <div class="weui-cell__bd">
-            <textarea class="weui-textarea" placeholder="请输入文本" rows="3"></textarea>
-            <div class="weui-textarea-counter"><span>0</span>/200</div>
+            <textarea id="form-detail" class="weui-textarea" placeholder="请输入您遇到的故障详情。请注意：联通和电信的故障不在我们的负责范围之内。"
+                      rows="3"></textarea>
+            <div class="weui-textarea-counter">
+                <span>0</span>/200
+            </div>
         </div>
     </div>
 </div>
-
-<a href="javascript:;" class="weui-btn weui-btn_primary">提交</a>
+<a id="submit" class="weui-btn weui-btn_primary">提交</a>
 
 </body>
 
-
+</html>
